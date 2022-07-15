@@ -7,11 +7,11 @@
  * @return void
  */
 function pre($params = [], $die = true) {
-    echo '<pre>';
-    print_r($params);
-    echo '</pre>';
+  echo '<pre>';
+  print_r($params);
+  echo '</pre>';
 
-    if ($die) die();
+  if ($die) die();
 }
 
 /**
@@ -20,12 +20,12 @@ function pre($params = [], $die = true) {
  * @return string
  */
 function formatPhone($phone) {
-    $formatedPhone = preg_replace('/[^0-9]/', '', $phone);
-    $matches = [];
-    preg_match('/^([0-9]{2})([0-9]{4,5})([0-9]{4})$/', $formatedPhone, $matches);
-    if ($matches) {
-        return "({$matches[1]}) {$matches[2]}-{$matches[3]}";
-    }
+  $formatedPhone = preg_replace('/[^0-9]/', '', $phone);
+  $matches = [];
+  preg_match('/^([0-9]{2})([0-9]{4,5})([0-9]{4})$/', $formatedPhone, $matches);
+  if ($matches) {
+      return "({$matches[1]}) {$matches[2]}-{$matches[3]}";
+  }
 
-    return $phone;
+  return $phone;
 }
